@@ -1,0 +1,14 @@
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\bin\Debug\net8.0\OpenMicNight.Domain.deps.json
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\bin\Debug\net8.0\OpenMicNight.Domain.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\bin\Debug\net8.0\OpenMicNight.Domain.pdb
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.AssemblyInfoInputs.cache
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.AssemblyInfo.cs
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.csproj.CoreCompileInputs.cache
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.sourcelink.json
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\refint\OpenMicNight.Domain.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.pdb
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\ref\OpenMicNight.Domain.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\bin\Debug\net8.0\OpenMicNight.Domain.runtimeconfig.json
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.Domain\OpenMicNight.Domain\obj\Debug\net8.0\OpenMicNight.Domain.genruntimeconfig.cache
