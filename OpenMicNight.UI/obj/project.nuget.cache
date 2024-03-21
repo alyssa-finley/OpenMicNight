@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6w3nz0M/9DAfQhQ+4PhheBqKZPF0E210E8zY/dbrz5w+YPtfi1bNLrvj5O5MzkykbQKlSGYKnXFNf2xJLjhYZA==",
+  "dgSpecHash": "tslxLmsKPEWbNOMrhfDzmjRdvCvBklLqx9uTaGTcJZI5r/RkTGmOOKJNf1S0Z/zDH/259sQkEwpJbd4/qguoaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.UI\\OpenMicNight.UI.csproj",
+  "projectFilePath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.UI\\OpenMicNight.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alyssa.finley\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\alyssa.finley\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

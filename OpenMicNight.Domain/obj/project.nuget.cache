@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gbXEjRenFEjTeBE9SLg02UNI1F9d+IsK0or5YIUSrmgPCWsZp4Rtv4iWitobBao7KYYr2BJSypp0B00ew/X32w==",
+  "dgSpecHash": "t85I0CHmDbKAY7sTItBoP8f1cJypIlPp7dOOj5Z0EM8Ht00cBA5Hiu53iy+yxH2BLSVKqLxtT2j1ovnzTMJcQg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
+  "projectFilePath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alyssa.finley\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\alyssa.finley\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

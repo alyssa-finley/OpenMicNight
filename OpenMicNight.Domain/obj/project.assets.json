@@ -2231,11 +2231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
       "projectName": "OpenMicNight.Domain",
-      "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
+      "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj",
       "packagesPath": "C:\\Users\\alyssa.finley\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\obj\\",
+      "outputPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alyssa.finley\\AppData\\Roaming\\NuGet\\NuGet.Config",

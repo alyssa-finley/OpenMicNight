@@ -6,10 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OpenMicNight.Data\OpenMicNight.Data.csproj" />
-    <ProjectReference Include="..\OpenMicNight.Domain\OpenMicNight.Domain.csproj" />
-    <ProjectReference Include="..\OpenMicNight.Validators\OpenMicNight.Validators.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Domain", "OpenMicNight.Domain\OpenMicNight.Domain.csproj", "{B05E28EC-6870-4C03-9032-5F88E089F992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.Domain", "OpenMicNight.Domain\OpenMicNight.Domain.csproj", "{B05E28EC-6870-4C03-9032-5F88E089F992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Data", "OpenMicNight.Data\OpenMicNight.Data.csproj", "{8BAD73EE-DD6B-4B96-89FF-0DE2CA276A11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.Data", "OpenMicNight.Data\OpenMicNight.Data.csproj", "{8BAD73EE-DD6B-4B96-89FF-0DE2CA276A11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.UI", "OpenMicNight.UI\OpenMicNight.UI.csproj", "{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.UI", "OpenMicNight.UI\OpenMicNight.UI.csproj", "{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Validators", "OpenMicNight.Validators\OpenMicNight.Validators.csproj", "{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Logic", "OpenMicNight.Logic\OpenMicNight.Logic.csproj", "{69E4208B-C924-4B67-BA01-955619552601}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69E4208B-C924-4B67-BA01-955619552601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E4208B-C924-4B67-BA01-955619552601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E4208B-C924-4B67-BA01-955619552601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E4208B-C924-4B67-BA01-955619552601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

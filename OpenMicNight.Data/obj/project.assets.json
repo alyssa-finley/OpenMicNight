@@ -4268,11 +4268,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Data\\OpenMicNight.Data.csproj",
+      "projectUniqueName": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Data\\OpenMicNight.Data.csproj",
       "projectName": "OpenMicNight.Data",
-      "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Data\\OpenMicNight.Data.csproj",
+      "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Data\\OpenMicNight.Data.csproj",
       "packagesPath": "C:\\Users\\alyssa.finley\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Data\\obj\\",
+      "outputPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alyssa.finley\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4291,8 +4291,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj": {
-              "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.Domain\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj"
+            "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj": {
+              "projectPath": "C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Domain\\OpenMicNight.Domain.csproj"
             }
           }
         }
