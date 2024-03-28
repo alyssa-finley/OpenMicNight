@@ -83,10 +83,10 @@ namespace OpenMicNight.UI
                     case "1":
                         Console.WriteLine("The following is a list of all performers: ");
                         Console.WriteLine();
-                        var allPerformers = signUpLogic.GetAllPerformers();
+                        var allPerformers = signUpLogic.GetAllPerformers(); 
                         foreach (var performer in allPerformers)
                         {
-                            Console.WriteLine(JsonSerializer.Serialize(performer));
+                            Console.WriteLine($"ID:{performer.PerformerId}   -    Name:{performer.PerformerName}   -   Type:{performer.PerformerType}");
                         }
                         Console.WriteLine();
                         break;
@@ -410,7 +410,6 @@ namespace OpenMicNight.UI
                             }
                         }
             }
-        
         static void DisplaySignUpMenu()
         {
         Console.WriteLine("Press 1 to view the list of performers for tonight");
