@@ -28,7 +28,7 @@ namespace OpenMicNight.Data
             // var success = false; 
             // success = 
         }
-        public void UpdatePerformer(Performer performer)
+    public void UpdatePerformer(Performer performer)
         {
             _dbContext.Performer.Update(performer);
             _dbContext.SaveChanges();

@@ -111,16 +111,6 @@ namespace OpenMicNight.Logic
         {
             return _songRepository.GetAllSongs();
         }
-
-        //public SignUpList GetSignUpList()
-        //{
-        //    var performers = _performanceRepository.GetAllPerformers(); // Retrieve performers
-        //    var signUpList = new SignUpList(); // Create a new sign-up list
-
-        //    // Add performers to the sign-up list
-        //    signUpList.Performances.AddRange(performers);
-
-        //    return signUpList;
-        }
     }
+}
 

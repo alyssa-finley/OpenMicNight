@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore; // Make sure to import EntityFrameworkCore 
 
 namespace OpenMicNight.Domain
 {
+    //Single Responsibility Principle (SRP) - this SignUpList class has a single responsibility representing the sign up list. 
+    //This class manages the list of performer signed up for performances. 
     public class SignUpList
     {
         public List<Performer> Performances { get; set; }
@@ -13,17 +15,3 @@ namespace OpenMicNight.Domain
         }
     }
 }
-
-//Do I need to put music and songs here?
-
-//public class SignUpList
-//{
-//    public string DateTime { get; set; }
-//    [ForeignKey(nameof(PerformerName))]
-//    public string PerformerName {  get; set; }   
-//    [ForeignKey(nameof(PerformerType))]
-//    public string PerformerType { get; set; }
-//    public string SongName {  get; set; }
-//    public bool IsOriginal { get; set; }   
-
-//}

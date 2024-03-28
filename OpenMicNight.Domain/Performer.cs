@@ -2,7 +2,8 @@
 
 namespace OpenMicNight.Domain
 {
-    //a class to store performer details
+    //Single Responsibility Principle (SRP) - this Performer class has a single responsibility representing the performers. 
+    //This class manages the performer details. 
     public class Performer
     {
         [Key]

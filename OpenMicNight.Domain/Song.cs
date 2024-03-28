@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace OpenMicNight.Domain
 {
+    //Single Responsibility Principle (SRP) - this Song class has a single responsibility representing the songs and ensuring they are associated with a performer. 
+    //This class is responsible for storing information about the song itself. 
     public class Song
     {
         [Key]

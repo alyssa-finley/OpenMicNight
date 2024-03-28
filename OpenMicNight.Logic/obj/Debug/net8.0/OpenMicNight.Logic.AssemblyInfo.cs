@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenMicNight.Logic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3a29d00068ef2ef9561ef692c9f8af9f07cc98b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c3c6300eee72a9b94f03112dea3b05ce09cde55")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenMicNight.Logic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenMicNight.Logic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

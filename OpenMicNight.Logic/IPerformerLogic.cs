@@ -10,7 +10,6 @@ namespace OpenMicNight.Logic
 {
     public interface IPerformerLogic
     {
-        //bool
         void AddPerformer(Performer performance);
         void RemovePerformer(Performer performance);
         void UpdatePerformer(Performer performance);

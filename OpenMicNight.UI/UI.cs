@@ -103,10 +103,12 @@ namespace OpenMicNight.UI
                                 var newPerformer = new Performer { PerformerName = performerToAddName , PerformerType = performerToAddType , Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:MM:ss") };
                                 signUpLogic.AddPerformer(newPerformer);
                                 Console.WriteLine($"Added {performerToAddName} to the performers list.");
+                                Console.WriteLine();
                             }
                             else
                             {
                                 Console.WriteLine($"Performer '{performerToAddName}' already exists.");
+                                Console.WriteLine();
                             }
                         }
                             break;
