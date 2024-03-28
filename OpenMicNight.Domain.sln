@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.Data", "OpenMi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.UI", "OpenMicNight.UI\OpenMicNight.UI.csproj", "{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Validators", "OpenMicNight.Validators\OpenMicNight.Validators.csproj", "{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.Logic", "OpenMicNight.Logic\OpenMicNight.Logic.csproj", "{4599DF71-9880-4213-B479-E1603E662B6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMicNight.Logic", "OpenMicNight.Logic\OpenMicNight.Logic.csproj", "{69E4208B-C924-4B67-BA01-955619552601}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMicNight.Test", "TestProject1\OpenMicNight.Test.csproj", "{7581B5E2-8032-4DC2-879C-E7E9D20FAC9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A46BC13-A8D8-427B-B4AA-47073A9DCE76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E9DDD84-7F4E-4B32-9B62-6ED1D96A9318}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69E4208B-C924-4B67-BA01-955619552601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69E4208B-C924-4B67-BA01-955619552601}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69E4208B-C924-4B67-BA01-955619552601}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69E4208B-C924-4B67-BA01-955619552601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4599DF71-9880-4213-B479-E1603E662B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4599DF71-9880-4213-B479-E1603E662B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4599DF71-9880-4213-B479-E1603E662B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4599DF71-9880-4213-B479-E1603E662B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7581B5E2-8032-4DC2-879C-E7E9D20FAC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7581B5E2-8032-4DC2-879C-E7E9D20FAC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7581B5E2-8032-4DC2-879C-E7E9D20FAC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7581B5E2-8032-4DC2-879C-E7E9D20FAC9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,7 @@ using OpenMicNight.Data;
 
 namespace OpenMicNight.Data.Migrations
 {
-    [DbContext(typeof(PerformanceContext))]
+    [DbContext(typeof(PerformerContext))]
     partial class PerformanceContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

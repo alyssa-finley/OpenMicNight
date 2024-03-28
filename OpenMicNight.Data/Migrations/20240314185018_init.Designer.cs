@@ -10,7 +10,7 @@ using OpenMicNight.Data;
 
 namespace OpenMicNight.Data.Migrations
 {
-    [DbContext(typeof(PerformanceContext))]
+    [DbContext(typeof(PerformerContext))]
     [Migration("20240314185018_init")]
     partial class init
     {

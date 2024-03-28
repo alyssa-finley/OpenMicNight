@@ -12,11 +12,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OpenMicNight.Data\OpenMicNight.Data.csproj" />
     <ProjectReference Include="..\OpenMicNight.Domain\OpenMicNight.Domain.csproj" />
+    <ProjectReference Include="..\OpenMicNight.Logic\OpenMicNight.Logic.csproj" />
   </ItemGroup>
 
 </Project>
