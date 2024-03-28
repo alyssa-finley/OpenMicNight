@@ -65,10 +65,10 @@ namespace OpenMicNight.Logic
             var wasRemoved = _signUpList.Performances.Remove(item);
             return wasRemoved;
         }
-        //public SignUpList GetSignUpList()
-        //{
-        //    return _signUpList;
-        //}
+        public SignUpList GetSignUpList()
+        {
+            return _signUpList;
+        }
         public int GetIndexToInsertByPerformanceType(Performer performance)
         {
             if (_signUpList.Performances.Count == 0) return 0;
@@ -112,19 +112,15 @@ namespace OpenMicNight.Logic
             return _songRepository.GetAllSongs();
         }
 
-        public List<Song> GetSongsByPerformerName(string name)
-        {
-            return _songRepository.GetAllSongsByPerformerName(name);
-        }
-        public SignUpList GetSignUpList()
-        {
-            var performers = _performanceRepository.GetAllPerformers(); // Retrieve performers
-            var signUpList = new SignUpList(); // Create a new sign-up list
+        //public SignUpList GetSignUpList()
+        //{
+        //    var performers = _performanceRepository.GetAllPerformers(); // Retrieve performers
+        //    var signUpList = new SignUpList(); // Create a new sign-up list
 
-            // Add performers to the sign-up list
-            signUpList.Performances.AddRange(performers);
+        //    // Add performers to the sign-up list
+        //    signUpList.Performances.AddRange(performers);
 
-            return signUpList;
+        //    return signUpList;
         }
     }
-}
+

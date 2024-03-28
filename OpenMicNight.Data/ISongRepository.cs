@@ -14,7 +14,7 @@ namespace OpenMicNight.Data
         void UpdateSong(Song song);
 
         List<Song> GetAllSongs();
-        List<Song> GetAllSongsByPerformerName(string name);
+        List<Song> GetAllSongsByPerformerId(int id);
 
     }
 }

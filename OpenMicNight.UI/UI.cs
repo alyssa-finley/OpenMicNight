@@ -86,7 +86,7 @@ namespace OpenMicNight.UI
                         var allPerformers = signUpLogic.GetAllPerformers(); 
                         foreach (var performer in allPerformers)
                         {
-                            Console.WriteLine($"ID:{performer.PerformerId}   -    Name:{performer.PerformerName}   -   Type:{performer.PerformerType}");
+                            Console.WriteLine($"ID:{performer.PerformerId}   -    Name: {performer.PerformerName}   -   Type: {performer.PerformerType}");
                         }
                         Console.WriteLine();
                         break;
@@ -185,30 +185,6 @@ namespace OpenMicNight.UI
                         }
                         Console.WriteLine();
                         break;
-                    //case "5":
-                    //    Console.WriteLine("What is the name of the performer you would like to add?");
-                    //    var performerToAddName = GetUserInput();
-                    //    var newPerformer = new Peformer();
-                    //    var existingPerformers = signUpLogic.GetPerformersByName(performerToAddName);
-                    //    if (existingPerformers.Any()) 
-                    //    { 
-                    //        bool exists = existingPerformers
-                    //            .Where(x => x.PerformerName.ToUpper() == performerToAddName.ToUpper()).Any();
-                    //        if (!exists)
-                    //        {
-                    //            Console.WriteLine("What type of performer would you like to add?");
-                    //            var performerToAddType = GetUserInput();
-                    //            newPerformer.PerformerName = performerToAddName;
-                    //            newPerformer.PerformerType = performerToAddType;
-                                
-                    //            bool success = signUpLogic.AddPerformer(newPerformer);
-                                
-                    //        }
-                    //    }
-                        
-                    //    //Console.WriteLine("There is already a performer by this name.");
-                       
-                    //    break;
                     case "back":
                         exitCondition = true;
                         break;
@@ -231,44 +207,50 @@ namespace OpenMicNight.UI
         static void DisplaySignUpMenu(ISignUpLogic signUpLogic)
         {
             bool exitCondition = false;
+            SignUpList signUpList = signUpLogic.GetSignUpList();
             while (!exitCondition)
             {
                 DisplaySignUpMenu();
                 string choice = GetUserInput().ToLower();
                 switch (choice)
                 {
-                    case "1":
+                    case "1": //Display the sign up list
                         Console.WriteLine("Sign Up List:");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
 
-                        // Remove this line: var signUpLogic = new SignUpLogic();
-
-                        var signUpList = signUpLogic.GetSignUpList();
-
-                        foreach (var performer in signUpList.Performances)
+                        if (signUpList.Performances.Count == 0)
                         {
-                            Console.WriteLine($"Performer: {performer.PerformerName}");
-                            Console.WriteLine($"Type of Performance: {performer.PerformerType}");
-
-                            // Check if the performer has any songs
-                            if (performer.Songs != null && performer.Songs.Any())
+                            Console.WriteLine("There are no performances yet signed up for this evening.");
+                            Console.WriteLine(" ");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            foreach (var performer in signUpList.Performances)
                             {
-                                Console.WriteLine("Songs:");
-                                foreach (var song in performer.Songs)
+                                Console.WriteLine(" ");
+                                Console.WriteLine(" ");
+                                Console.WriteLine($"Performer: {performer.PerformerName}");
+                                Console.WriteLine($"Type of Performance: {performer.PerformerType}");
+
+                                if (performer.PerformerType.ToLower() == "music")
                                 {
-                                    Console.WriteLine($"- {song.SongName} (Original: {song.IsOriginal})");
+                                    Console.WriteLine("Songs:");
+                                    foreach (var song in performer.Songs)
+                                    {
+                                        string originalStatus = song.IsOriginal ? "yes" : "no";
+                                        Console.WriteLine($"- {song.SongName} (Original: {originalStatus})");
+                                    }
                                 }
                             }
-                            else
-                            {
-                                Console.WriteLine("No songs added for this performer.");
-                            }
-
-                            Console.WriteLine(); // Add a line break between performers
+                            Console.WriteLine(" ");
                         }
-
-                        Console.WriteLine();
                         break;
-                    case "2":
+
+                    case "2": //Sign up a new performer 
+
+
                         if (!signUpLogic.MaxPerformances())
                         {
                             Console.WriteLine("The maximum number of sign-ups has been reached tonight, sorry!");
@@ -280,91 +262,76 @@ namespace OpenMicNight.UI
                         var performerAddToSignUpName = GetUserInput();
                         using (var dbContext = new PerformerContext())
                         {
+                            var songRepository = new SongRepository(dbContext);
                             var existingPerformerToAdd = dbContext.Performer.FirstOrDefault(p => p.PerformerName == performerAddToSignUpName);
                             if (existingPerformerToAdd != null)
                             {
-                                string performerType = existingPerformerToAdd.PerformerType;
+                                Console.WriteLine($"Performer '{performerAddToSignUpName}' found!");
+                                Console.WriteLine(" ");
+                                Console.WriteLine(" ");
 
-                                var songs = new List<Song>();
+                                string performerType = existingPerformerToAdd.PerformerType;
+                                int performerId = existingPerformerToAdd.PerformerId;
+
                                 if (performerType.ToLower() == "music")
                                 {
-                                    for (int i = 0; i < 3; i++)
+                                    var performerSongs = songRepository.GetAllSongsByPerformerId(performerId);
+                                    Console.WriteLine("Here are the existing songs for this performer: ");
+                                    foreach (var song in performerSongs)
                                     {
-                                        Console.WriteLine($"Enter the name of song {i + 1}:");
-                                        string songName = GetUserInput();
-
-                                        Console.WriteLine($"Is '{songName}' an original song? (yes/no)");
-                                        string isOriginalInput = GetUserInput().ToLower();
-                                        bool isOriginal = isOriginalInput == "yes";
-                                    
-                                    var newSong = new Song
-                                    {
-                                        PerformerId = existingPerformerToAdd.PerformerId,
-                                        SongName = songName,
-                                        IsOriginal = isOriginal
-                                    };
-                                        songs.Add(newSong); // Adding new song to the list
+                                        Console.WriteLine($" - {song.SongName}");
                                     }
 
-                                    // Adding all songs to the database outside the loop
-                                    dbContext.Songs.AddRange(songs);
+                                    var newSongs = new List<Song>();
+
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        Console.WriteLine($"Enter the name of song {i + 1} you will be performing:");
+                                        string songName = GetUserInput();
+
+                                        //Checking if song already exists in the database
+                                        var existingSong = dbContext.Songs.FirstOrDefault(s => s.PerformerId == existingPerformerToAdd.PerformerId && s.SongName.ToLower() == songName.ToLower());
+
+                                        if (existingSong == null)
+                                        {
+
+                                            Console.WriteLine($"Is '{songName}' an original song? (yes/no)");
+                                            string isOriginalInput = GetUserInput().ToLower();
+                                            bool isOriginal = isOriginalInput == "yes";
+                                            var newSong = new Song
+                                            {
+                                                PerformerId = existingPerformerToAdd.PerformerId,
+                                                SongName = songName,
+                                                IsOriginal = isOriginal
+                                            };
+                                            newSongs.Add(newSong); // Adding new song to the database
+                                        }
+                                    }
+                                    //Adding performer to the sign up list 
+                                    signUpList.Performances.Add(existingPerformerToAdd);
+                                    Console.WriteLine($"Added '{performerAddToSignUpName}' to sign up list. Good luck and have fun! ");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(" ");
+
+                                    dbContext.Songs.AddRange(newSongs);
+                                    dbContext.SaveChanges();
                                 }
                                 else
-                            { 
-                                Console.WriteLine($"Performer '{performerAddToSignUpName}' exists with type '{performerType}'. No songs added.");
-                            }
-                            // Add songs to the database
-                            
-                            dbContext.SaveChanges();
-                            Console.WriteLine($"Added songs to performer '{performerAddToSignUpName}'.");
-                        }
-                      else
-                        {
-                            Console.WriteLine("Performer not found in the database. Return to the main menu and add a new performer.");
-                        }
-                }
-                break;
-                        //this is not adding to the db :( 
-                                  
+                                {
+                                    signUpList.Performances.Add(existingPerformerToAdd);
+                                    Console.WriteLine($"Performer '{performerAddToSignUpName}' has been added to the list tonight with type '{performerType}'. Good luck and have fun! ");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine(" ");
+                                }
 
-                                    //if (existingPerformerToAdd.Count == 0) Console.WriteLine("There is no performer by that name. Please try again.");
-                                    //else if (existingPerformerToAdd.Count == 1)
-                                    //{
-                                    //    tonightsPerformance.AddPerformanceToSignUpList(existingPerformerToAdd[0]);
-                                    //    Console.WriteLine($"Added {performerAddToSignUpName} to tonight's open mic performance list.");
-                                    //}
-                                    //else
-                                    //{
-                                    //    foreach (var performance in existingPerformerToAdd)
-                                    //    {
-                                    //        Console.WriteLine(JsonSerializer.Serialize(performerAddToSignUpName));
-                                    //    }
-                                    //    Console.WriteLine();
-                                    //    Console.WriteLine($"Enter the Id of the {performerAddToSignUpName} you would like to add.");
-                                    //    var performerId = int.Parse(GetUserInput());
-                                    //    var existingPerformerIds = existingPerformerToAdd.Select(x => x.PerformerId);
-                                    //    if (existingPerformerIds.Contains(performerId))
-                                    //    {
-                                    //        tonightsPerformance.AddPerformanceToSignUpListById(performerId);
-                                    //        Console.WriteLine($"Added {performerAddToSignUpName} to tonight's open mic performance list.");
-                                    //    }
-                                    //    else Console.WriteLine($"There is no {performerAddToSignUpName} with ID {performerId}. Please try again.");
-                                    //}
-                            //
-                            //                      using (var dbContext = new PerformerContext())
-                            //                      {
-                            //                          var existingPerformer = dbContext.Performer.FirstOrDefault(p => p.PerformerName == performerToAddName);
-                            //                          if (existingPerformer == null)
-                            //                          {
-                            //                              var newPerformer = new Performer { PerformerName = performerToAddName, PerformerType = performerToAddType, Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:MM:ss") };
-                            //                              signUpLogic.AddPerformer(newPerformer);
-                            //                              Console.WriteLine($"Added {performerToAddName} to the performers list.");
-                            //                          }
-                            //                          else
-                            //                          {
-                            //                              Console.WriteLine($"Performer '{performerToAddName}' already exists.");
-                            //                          }
-                            //                      }
+                                dbContext.SaveChanges();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Performer not found in the database. Return to the main menu and add a new performer.");
+                            }
+                        }
+                break;
 
                     case "3":
                         Console.WriteLine("What is the name of the performer you would like to remove?");
@@ -420,31 +387,3 @@ namespace OpenMicNight.UI
         }
     }
 }
-
-//private static PerformanceContext _context = new PerformanceContext();
-
-//private static void Main(string[] args)
-//{
-//    _context.Database.EnsureCreated();
-//    GetPerformance("Before Add:");
-//    AddPerformance();
-//    GetPerformance("After Add:");
-//    Console.Write("Press any key...");
-//    Console.ReadKey();
-//}
-
-//private static void AddPerformance()
-//{
-//    var performance = new Performance { PerformerName = "Two For One", PerformerType = "Music", Datetime = DateTime.Now.ToString("yyyy-MM-dd HH:MM:ss") };
-//    _context.Performance.Add(performance);
-//    _context.SaveChanges();
-//}
-
-//private static void GetPerformance(string text)
-//{
-//    var performances = _context.Performance.ToList();
-//    Console.WriteLine($"{text}: Performer count is {performances.Count}");
-//    foreach (var performance in performances)
-//    {
-//        Console.WriteLine(performance.PerformerName);
-//    }

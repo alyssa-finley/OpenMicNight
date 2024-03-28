@@ -13,6 +13,5 @@ namespace OpenMicNight.Logic
         void RemoveSong(Song song);
         void UpdateSong(Song song);
         List<Song> GetAllSongs();
-        List<Song> GetSongsByPerformerName(string name);
     }
 }

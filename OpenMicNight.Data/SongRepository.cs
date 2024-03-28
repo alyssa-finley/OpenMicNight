@@ -13,7 +13,7 @@ namespace OpenMicNight.Data
         private readonly PerformerContext _dbContext;
         private readonly PerformerRepository _performanceRepository;
 
-        public SongRepository()
+        public SongRepository(PerformerContext dbContext)
         {
             _dbContext = new PerformerContext();
         }
@@ -36,14 +36,10 @@ namespace OpenMicNight.Data
         {
             return _dbContext.Songs.ToList();
         }
-        public Song GetSongByPerformerId(int id)
-        {
-            return _dbContext.Songs.SingleOrDefault(x => x.PerformerId == id);
-        }
-        public List<Song> GetAllSongsByPerformerName(string name)
+        public List<Song> GetAllSongsByPerformerId(int id)
         {
             return _dbContext.Songs
-                .FromSql($"SELECT * FROM [Song] WHERE PerformerName = {name}")
+                .FromSql($"SELECT * FROM [Songs] WHERE PerformerId = {id}")
                 .ToList();
         }
     }
