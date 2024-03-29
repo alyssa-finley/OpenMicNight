@@ -1,14 +1,8 @@
-﻿using System;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.Identity.Client;
+﻿using Microsoft.EntityFrameworkCore;
 using OpenMicNight.Data;
 using OpenMicNight.Domain;
 using OpenMicNight.Logic;
 using System.Text.Json;
-using Microsoft.VisualBasic;
-using System.Diagnostics.Eventing.Reader;
 
 namespace OpenMicNight.UI
 {
@@ -67,8 +61,8 @@ namespace OpenMicNight.UI
         }
         static void DisplayMainMenu()
         {
-            Console.WriteLine("Press 1 to view, add, remove or update the performers");
-            Console.WriteLine("Press 2 to view, add or remove performances from tonight's sign up list");
+            Console.WriteLine("Press 1 to View, Add, Remove or Update the Performers");
+            Console.WriteLine("Press 2 to View, Add, Remove Performances from Tonight's Sign Up List");
             Console.WriteLine("Type 'exit' to quit");
         }
         static void PerformerMenu(ISignUpLogic signUpLogic)
@@ -113,79 +107,65 @@ namespace OpenMicNight.UI
                         }
                             break;
                     case "3":
-                        Console.WriteLine("What type of performer would you like to see?");
+                        Console.WriteLine("What type of performer would you like to see (music, comedy or poetry)?");
                         var performerType = GetUserInput().ToLower();
                         var selectedType = signUpLogic.GetPerformersByType(performerType);
                         foreach (var performer in selectedType)
                         {
-                            Console.WriteLine(JsonSerializer.Serialize(performer));
+                            Console.WriteLine(($"ID:{performer.PerformerId}   -    Name: {performer.PerformerName}   -   Type: {performer.PerformerType}"));
                         }
                         Console.WriteLine();
                         break;
                     case "4":
                         Console.WriteLine("What is the name of the performer you would like to update?");
                         var performerToUpdateName = GetUserInput();
-                        var existingPerformersToUpdate = signUpLogic.GetPerformersByName(performerToUpdateName);
-                        if (existingPerformersToUpdate.Count == 0)
-                            Console.WriteLine("There is not a performer by that name.");
-                        else if (existingPerformersToUpdate.Count == 1)
+                        using (var dbContext = new PerformerContext())
                         {
-                            Console.WriteLine(JsonSerializer.Serialize(existingPerformersToUpdate[0]));
-                            Console.WriteLine();
-                            Console.WriteLine("Please enter the updated performer name: ");
-                            existingPerformersToUpdate[0].PerformerName = Console.ReadLine();
-                            Console.Write("Enter the updated type of performer (music, comedy or poetry): ");
-                            existingPerformersToUpdate[0].PerformerType = Console.ReadLine();
-                        }
-                        else
-                        {
-                            foreach (var performance in existingPerformersToUpdate)
+                            var existingPerformersToUpdate = dbContext.Performer.FirstOrDefault(p => p.PerformerName.ToLower() == performerToUpdateName);
+                            if (existingPerformersToUpdate == null)
                             {
-                                Console.WriteLine(JsonSerializer.Serialize(performance));
-                            }
-                            Console.WriteLine();
-                            Console.WriteLine($"Enter the ID of the {performerToUpdateName} you would like to update.");
-                            var performerId = int.Parse(GetUserInput());
-                            var existingPerformerIds = existingPerformersToUpdate.Select(x => x.PerformerId);
-                            if (existingPerformerIds.Contains(performerId))
-                            {
-                                var performerToUpdate = signUpLogic.GetPerformersById(performerId);
-                                Console.WriteLine(JsonSerializer.Serialize(performerToUpdate));
+                                Console.WriteLine("There is not a performer by that name.");
                                 Console.WriteLine();
-                                Console.Write("Enter the updated name of the performer: ");
-                                performerToUpdate.PerformerName = Console.ReadLine();
-                                Console.Write("Enter the updated type of performer: ");
-                                performerToUpdate.PerformerType = Console.ReadLine();
                             }
-                            else Console.WriteLine($"There is no {existingPerformersToUpdate} with ID {performerId}.");
+                            else 
+                            {
+                                    Console.WriteLine(($"ID:{existingPerformersToUpdate.PerformerId}   -    Name: {existingPerformersToUpdate.PerformerName}   -   Type: {existingPerformersToUpdate.PerformerType}"));
+                                    Console.WriteLine();
+                                    Console.WriteLine("Please enter the updated performer name: ");
+                                    existingPerformersToUpdate.PerformerName = Console.ReadLine();
+                                    Console.Write("Enter the updated type of performer (music, comedy or poetry): ");
+                                    existingPerformersToUpdate.PerformerType = Console.ReadLine();
+                                dbContext.SaveChanges();
+                                Console.WriteLine("Performer updated successfully.");
+                                Console.WriteLine();
+                                Console.WriteLine();
+                            }
+                            
                         }
-                        Console.WriteLine();
                         break;
                     case "5":
                         Console.WriteLine("What is the name of the performer you would like to remove?");
                         var performerToRemoveName = GetUserInput();
-                        var existingPerformersToRemove = signUpLogic.GetPerformersByName(performerToRemoveName);
-                        if (existingPerformersToRemove.Count == 0)
-                            Console.WriteLine("There is not a performer by that name.");
-                        else if (existingPerformersToRemove.Count == 1) signUpLogic.RemovePerformer(existingPerformersToRemove[0]);
-                        else
+                        using (var dbContext = new PerformerContext())
                         {
-                            foreach (var performer in existingPerformersToRemove)
+                            var existingPerformersToRemove = dbContext.Performer.FirstOrDefault(p => p.PerformerName.ToLower() == performerToRemoveName);
+                            if (existingPerformersToRemove == null)
                             {
-                                Console.WriteLine(JsonSerializer.Serialize(performer));
+                                Console.WriteLine("There is not a performer by that name.");
+                                Console.WriteLine();
                             }
-                            Console.WriteLine();
-                            Console.WriteLine($"Enter the Id of the {performerToRemoveName} you would like to remove.");
-                            var performerId = int.Parse(GetUserInput());
-                            var existingPerformerIds = existingPerformersToRemove.Select(x => x.PerformerId);
-                            if (existingPerformerIds.Contains(performerId))
+                            else
                             {
-                                var performerToRemove = signUpLogic.GetPerformersById(performerId);
-                                signUpLogic.RemovePerformer(performerToRemove);
+                                Console.WriteLine(($"ID:{existingPerformersToRemove.PerformerId}   -    Name: {existingPerformersToRemove.PerformerName}   -   Type: {existingPerformersToRemove.PerformerType}"));
+                                Console.WriteLine();
+                                dbContext.Performer.Remove(existingPerformersToRemove);
+                                dbContext.SaveChanges();
+                                Console.WriteLine("Performer removed successfully.");
+                                Console.WriteLine();
+                                Console.WriteLine();
                             }
-                            else Console.WriteLine($"There is no {performerToRemoveName} with Id {performerId}.");
+
                         }
-                        Console.WriteLine();
                         break;
                     case "back":
                         exitCondition = true;
