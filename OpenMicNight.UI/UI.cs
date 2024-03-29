@@ -48,7 +48,7 @@ namespace OpenMicNight.UI
                         PerformerMenu(tonightsPerformanceLogic);
                         break;
                     case "2":
-                        DisplaySignUpMenu(tonightsPerformanceLogic);
+                        SignUpMenu(tonightsPerformanceLogic);
                         break;
                     case "exit":
                         exitCondition = true;
@@ -129,12 +129,12 @@ namespace OpenMicNight.UI
                             }
                             else 
                             {
-                                    Console.WriteLine(($"ID:{existingPerformersToUpdate.PerformerId}   -    Name: {existingPerformersToUpdate.PerformerName}   -   Type: {existingPerformersToUpdate.PerformerType}"));
-                                    Console.WriteLine();
-                                    Console.WriteLine("Please enter the updated performer name: ");
-                                    existingPerformersToUpdate.PerformerName = Console.ReadLine();
-                                    Console.Write("Enter the updated type of performer (music, comedy or poetry): ");
-                                    existingPerformersToUpdate.PerformerType = Console.ReadLine();
+                                Console.WriteLine(($"ID:{existingPerformersToUpdate.PerformerId}   -    Name: {existingPerformersToUpdate.PerformerName}   -   Type: {existingPerformersToUpdate.PerformerType}"));
+                                Console.WriteLine();
+                                Console.WriteLine("Please enter the updated performer name: ");
+                                existingPerformersToUpdate.PerformerName = Console.ReadLine();
+                                Console.Write("Enter the updated type of performer (music, comedy or poetry): ");
+                                existingPerformersToUpdate.PerformerType = Console.ReadLine();
                                 dbContext.SaveChanges();
                                 Console.WriteLine("Performer updated successfully.");
                                 Console.WriteLine();
@@ -186,7 +186,8 @@ namespace OpenMicNight.UI
             Console.WriteLine("Type 'back' to return to the Main Menu");
             Console.Write("Choice: ");
         }
-        static void DisplaySignUpMenu(ISignUpLogic signUpLogic)
+        static void SignUpMenu(ISignUpLogic signUpLogic)
+
         {
             bool exitCondition = false;
             SignUpList signUpList = signUpLogic.GetSignUpList();
@@ -318,37 +319,34 @@ namespace OpenMicNight.UI
                     case "3":
                         Console.WriteLine("What is the name of the performer you would like to remove?");
                         var performerToRemoveName = GetUserInput();
-                        var existingPerformerToRemove = signUpLogic.GetPerformersByName(performerToRemoveName);
-                        if (existingPerformerToRemove.Count == 0)
-                            Console.WriteLine("There is no performer with this name.");
-                        else if (existingPerformerToRemove.Count == 1)
+                        using (var dbContext = new PerformerContext())
                         {
-                            bool wasRemoved = signUpLogic.RemovePerformanceFromSignUpListById(existingPerformerToRemove[0].PerformerId);
-                            if (wasRemoved)
-                                Console.WriteLine($"{performerToRemoveName} was removed from the list.");
+                            // Find the performer to remove
+                            var existingPerformerToRemove = dbContext.Performer.FirstOrDefault(p => p.PerformerName.ToLower() == performerToRemoveName.ToLower());
+
+                            if (existingPerformerToRemove == null)
+                            {
+                                Console.WriteLine("There is no performer with this name.");
+                            }
                             else
-                                Console.WriteLine($"{performerToRemoveName} was not already on the list.");
-                        }
-                        else
-                        {
-                            foreach(var performer in existingPerformerToRemove)
                             {
-                                Console.WriteLine(JsonSerializer.Serialize(performer) );
-                            }
-                            Console.WriteLine();
-                            Console.WriteLine($"Enter the Id of the {performerToRemoveName} you would like to remove.");
-                            var performerId = int.Parse(GetUserInput());
-                            var existingPerformerIds = existingPerformerToRemove.Select(x => x.PerformerId);
-                            if (existingPerformerIds.Contains(performerId))
-                            {
-                                bool wasRemoved = signUpLogic.RemovePerformanceFromSignUpListById(performerId);
-                                if (wasRemoved)
-                                    Console.WriteLine($"{performerToRemoveName} was removed from the sign up list for tonight's performances.");
-                                else
-                                    Console.WriteLine($"There is no {performerToRemoveName} with ID {performerId}.");
+                                // Remove the performer from the sign-up list
+                                signUpList.Performances.Remove(existingPerformerToRemove);
+
+                                // Remove related songs
+                                var songsToRemove = dbContext.Songs.Where(s => s.PerformerId == existingPerformerToRemove.PerformerId);
+                                dbContext.Songs.RemoveRange(songsToRemove);
+
+                                // Remove the performer from the database
+                                dbContext.Performer.Remove(existingPerformerToRemove);
+
+                                // Save changes to the database
+                                dbContext.SaveChanges();
+
+                                Console.WriteLine($"{performerToRemoveName} was removed from the list.");
+                                Console.WriteLine(" ");
                             }
                         }
-                        Console.WriteLine();
                         break;
                     case "back":
                                 exitCondition = true;
