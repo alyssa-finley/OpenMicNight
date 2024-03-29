@@ -34,3 +34,4 @@ C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMi
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Data\obj\Debug\net8.0\OpenMicNight.Data.pdb
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Data\obj\Debug\net8.0\OpenMicNight.Data.genruntimeconfig.cache
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Data\obj\Debug\net8.0\ref\OpenMicNight.Data.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Data\bin\Debug\net8.0\OpenMicNightData.mdf

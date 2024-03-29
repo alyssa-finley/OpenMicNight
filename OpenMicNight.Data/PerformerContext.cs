@@ -16,7 +16,13 @@ namespace OpenMicNight.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source = (localdb)\\ProjectModels; Initial Catalog=OpenMicNightData");
+            //optionsBuilder.UseSqlServer("Data Source = (localdb)\\ProjectModels; Initial Catalog=OpenMicNightData");
+            string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Data\OpenMicNightData.mdf;Integrated Security=True";
+            //string connectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=|C:\\Users\\alyssa.finley\\OneDrive - Waystar\\Documents\\Projects\\OpenMicNight\\OpenMicNight.UI\\OpenMicNight.Data|\\OpenMicNightData.mdf;Integrated Security=True";
+            optionsBuilder.UseSqlServer(connectionString);
+
+            
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

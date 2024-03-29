@@ -16,3 +16,4 @@ C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMi
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Logic\obj\Debug\net8.0\refint\OpenMicNight.Logic.dll
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Logic\obj\Debug\net8.0\OpenMicNight.Logic.pdb
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Logic\obj\Debug\net8.0\ref\OpenMicNight.Logic.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.Logic\bin\Debug\net8.0\OpenMicNightData.mdf

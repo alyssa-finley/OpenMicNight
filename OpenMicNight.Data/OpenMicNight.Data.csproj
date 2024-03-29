@@ -20,4 +20,10 @@
     <ProjectReference Include="..\OpenMicNight.Domain\OpenMicNight.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="OpenMicNightData.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -307,3 +307,4 @@ C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMi
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.UI\obj\Debug\net8.0\OpenMicNight.UI.pdb
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.UI\obj\Debug\net8.0\OpenMicNight.UI.genruntimeconfig.cache
 C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.UI\obj\Debug\net8.0\ref\OpenMicNight.UI.dll
+C:\Users\alyssa.finley\OneDrive - Waystar\Documents\Projects\OpenMicNight\OpenMicNight.UI\OpenMicNight.UI\bin\Debug\net8.0\OpenMicNightData.mdf
